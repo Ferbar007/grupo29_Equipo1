@@ -8,6 +8,8 @@ import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 @CrossOrigin
 @RestController
+
+
 @RequestMapping("/usuarios")
 
 public class ControladorUsuario {
