@@ -1,5 +1,6 @@
 package Equipo1.minTIC.seguridad.Controladores;
 package Equipo1.minTIC.seguridad.Modelos.Usuario;
+import Equipo1.minTIC.seguridad.Repositorios.RepositorioUsuario;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
@@ -41,9 +42,9 @@ public class ControladorUsuario {
             usuarioActual.setNombres(infoUsuario,getNombres());
             usuarioActual.setApellidos(infoUsuario,getApellidos());
             usuarioActual.setCedula(infoUsuario,getCedula());
-            usuarioActual.setNombre_Seudonimo(infoUsuario.getNombre_SSeudonimo());
-            usuarioActual.setContrasena(convertirSHA256(infoUsuario.getContrasena()))
-            ;
+            usuarioActual.setNombre_Seudonimo(infoUsuario.getNombre_Seudonimo());
+            usuarioActual.setCorreo(infoUsuario.getCorreo());
+            usuarioActual.setContrasena(convertirSHA256(infoUsuario.getContrasena()));
             return this.miRepositorioUsuario.save(usuarioActual);
         }else{
             return null;
